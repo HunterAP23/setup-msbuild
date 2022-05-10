@@ -12,7 +12,7 @@ const ALLOW_PRERELEASE = core.getInput('vs-prerelease') || 'false'
 const MSBUILD_ARCH = core.getInput('msbuild-architecture') || 'x86'
 
 // if a specific version of VS is requested
-let VSWHERE_EXEC = '-products * -requires Microsoft.Component.MSBuild -property installationPath -latest '
+let VSWHERE_EXEC = '-products * -requires Microsoft.Component.MSBuild -property installationPath '
 if (ALLOW_PRERELEASE === 'true') {
     VSWHERE_EXEC += ' -prerelease '
  }
